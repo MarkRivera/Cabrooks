@@ -1,0 +1,19 @@
+{
+  "name": "cabrooks",
+  "version": "1.0.0",
+  "description": "Photography site for a friend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkRivera/Cabrooks.git"
+  },
+  "author": "Mark Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkRivera/Cabrooks/issues"
+  },
+  "homepage": "https://github.com/MarkRivera/Cabrooks#readme"
+}

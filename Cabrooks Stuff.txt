@@ -1,0 +1,16 @@
+
+Home Page -> 
+	-> Video or Carousel (Link to pricing and packages)
+	-> Featured Photos
+
+About Us ->
+	-> Explaination of who we are
+
+Gallery -> 
+	-> Links to personal galleries (Shoot proof) 
+
+Pricing -> 
+	-> Packages to headshots
+
+Contact Me / Make Appointments ->
+	-> Google Calendar
