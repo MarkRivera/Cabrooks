@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     Barba.Dispatcher.on('newPageReady', function () {
       let nav = document.getElementById("myTopnav");
       nav.addEventListener('click', function () {
-        (nav.className === "topnav topnav-1a") ? nav.className += " responsive": nav.className = "topnav topnav-1a";
+        (nav.className === "topnav cl-effect-21") ? nav.className += " responsive": nav.className = "topnav cl-effect-21";
       })
       initSlideShow();
     })
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   else {
     let nav = document.getElementById("myTopnav");
     nav.addEventListener('click', function () {
-      (nav.className === "topnav topnav-1a") ? nav.className += " responsive": nav.className = "topnav topnav-1a";
+      (nav.className === "topnav cl-effect-21") ? nav.className += " responsive": nav.className = "topnav cl-effect-21";
     })
     initSlideShow ()
   }
