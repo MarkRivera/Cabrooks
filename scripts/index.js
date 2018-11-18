@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         (nav.className === "topnav cl-effect-21") ? nav.className += " responsive": nav.className = "topnav cl-effect-21";
       })
       initSlideShow();
+      initModal();
     })
   }
   else {
@@ -20,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     nav.addEventListener('click', function () {
       (nav.className === "topnav cl-effect-21") ? nav.className += " responsive": nav.className = "topnav cl-effect-21";
     })
-    initSlideShow ()
+    initSlideShow();
+    initModal();
+
   }
 
   /* Slide show JS */
@@ -45,4 +48,67 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const next = document.querySelector('.next').addEventListener('click', () => slideShow.next())
   };
 
+
+  function initModal () {
+    let galleryModal = document.getElementById('modal-content');
+    let doesModalGalleryExist = false;
+    let modalGallery;
+    let isOpen;
+
+    function makeImgOpenModal () {
+      const images = document.getElementById('pics');
+      images.addEventListener('click', (e) => {
+        if (e.target.nodeName == 'IMG') {
+          openModal(e.target.dataset.index)
+        }
+      })
+    }
+
+    function openModal (index) {
+      document.getElementById('gallery-modal').style.display = 'block';
+      isOpen = true;
+
+      if (doesModalGalleryExist) {
+        modalGallery.goTo(index)
+      }
+
+      else {
+        doesModalGalleryExist = true;
+        modalGallery = new Siema({
+          selector: galleryModal,
+          duration: 200,
+          easing: 'ease-out',
+          perPage: 1,
+          startIndex: 0,
+          draggable: true,
+          multipleDrag: true,
+          threshold: 20,
+          loop: true,
+          rtl: false,
+          onInit: () => {},
+          onChange: () => {},
+        });
+
+        modalGallery.goTo(index)
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('gallery-modal').style.display = "none";
+      isOpen = false;
+    }
+
+    makeImgOpenModal();
+    document.querySelector('.close').addEventListener('click', () => {
+      closeModal();
+    })
+
+    document.addEventListener('keydown', (e) => {
+      if (isOpen && e.key === "Escape") {
+        closeModal();
+      }
+    })
+
+
+  }
 })
